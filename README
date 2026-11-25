@@ -1,0 +1,29 @@
+# Monorepo
+
+## Getting Started
+
+### 1. Install dependencies
+Run from the root directory:
+pnpm install
+
+### 2. Generate Nuxt types (`prepare`)
+Run after a fresh clone or whenever `nuxt.config.ts` / modules change:
+pnpm --filter web exec nuxt prepare
+
+---
+
+## Installing New Packages
+
+- **Root (shared tooling like Turbo, Golar):** `pnpm add -D -w <package>`
+- **Web (`apps/web`):** `pnpm --filter web add <package>`
+- **Web (devDependency):** `pnpm --filter web add -D <package>`
+- **API (`apps/api`):** `pnpm --filter api add <package>`
+- **API (devDependency):** `pnpm --filter api add -D <package>`
+
+---
+
+## Common Commands (from root)
+
+- **Start all apps in development mode:** `pnpm dev`
+- **Run typecheck across the monorepo:** `pnpm typecheck`
+- **Build all apps and packages:** `pnpm build`
