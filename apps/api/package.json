@@ -1,0 +1,15 @@
+{
+  "name": "api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown src/main.ts",
+    "dev": "tsx watch src/main.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "tsdown": "^0.23.7",
+    "tsx": "^4.23.15"
+  }
+}

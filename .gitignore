@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Turborepo cache
+.turbo/
+
+# Build outputs
+dist/
+
+# Nuxt generated files
+.nuxt/
+.output/
+
+# Environment variables (keep .env.example as a template)
+.env
+.env.*
+!.env.example

@@ -1,0 +1,28 @@
+{
+  "name": "monorepo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "typecheck": "turbo typecheck"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.23.0",
+      "onFail": "download"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "^26.13.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.23.0",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "turbo": "^2.11.13",
+    "typescript": "^7.0.2"
+  }
+}
