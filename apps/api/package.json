@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",
+    "@types/node": "^26.6.10",
     "tsdown": "^0.23.7",
     "tsx": "^4.23.15"
   }

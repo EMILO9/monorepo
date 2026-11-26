@@ -21,9 +21,7 @@
   },
   "packageManager": "pnpm@12.23.0",
   "devDependencies": {
-    "@types/node": "^26.6.10",
     "turbo": "^2.11.13",
-    "typescript": "^7.0.2",
-    "vue-tsc": "^3.3.14"
+    "typescript": "^7.0.2"
   }
 }
