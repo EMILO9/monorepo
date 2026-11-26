@@ -195,6 +195,15 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
 
+  apps/adm:
+    devDependencies:
+      '@repo/tsconfig':
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      '@types/node':
+        specifier: ^26.6.10
+        version: 26.6.10
+
   apps/api:
     dependencies:
       fastify:
