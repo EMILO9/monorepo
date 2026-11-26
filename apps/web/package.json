@@ -5,12 +5,14 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "preview": "nuxt preview"
   },
   "dependencies": {
     "nuxt": "^4.7.0"
   },
   "devDependencies": {
-    "vue-tsc": "^3.3.14"
+    "@golar/vue": "^0.1.11",
+    "golar": "^0.1.11"
   }
 }
