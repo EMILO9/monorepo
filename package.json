@@ -21,7 +21,6 @@
   },
   "packageManager": "pnpm@12.23.0",
   "devDependencies": {
-    "turbo": "^2.11.13",
-    "typescript": "^7.0.2"
+    "turbo": "^2.11.13"
   }
 }
