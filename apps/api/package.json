@@ -13,5 +13,9 @@
     "tsdown": "^0.23.7",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "fastify": "^5.12.8",
+    "mongoose": "^9.13.1"
   }
 }
