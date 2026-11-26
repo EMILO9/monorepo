@@ -10,9 +10,5 @@
   },
   "dependencies": {
     "nuxt": "^4.7.0"
-  },
-  "devDependencies": {
-    "@golar/vue": "^0.1.11",
-    "golar": "^0.1.11"
   }
 }
