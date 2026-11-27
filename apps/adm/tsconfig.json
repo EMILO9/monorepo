@@ -1,6 +1,8 @@
 {
-    "$schema": "https://json.schemastore.org/tsconfig",
-    "extends": "@repo/tsconfig/app",
-    "compilerOptions": {},
-    "include": ["."],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" },
+  ],
 }
