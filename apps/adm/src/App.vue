@@ -1,3 +1,8 @@
 <template>
-    <p>Hello World!</p>
+    <p>{{ a }}</p>
 </template>
+
+<script setup>
+import { ref } from "vue";
+const a = ref("Hello World!");
+</script>
