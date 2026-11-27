@@ -5,5 +5,8 @@
     "./base": "./base.json",
     "./node": "./node.json",
     "./app": "./app.json"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.10"
   }
 }
