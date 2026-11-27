@@ -207,6 +207,9 @@ importers:
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
+      '@repo/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@types/node':
         specifier: ^26.6.10
         version: 26.6.10
@@ -250,6 +253,9 @@ importers:
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
+      '@repo/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@types/node':
         specifier: ^26.6.10
         version: 26.6.10
@@ -272,11 +278,16 @@ importers:
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../packages/tsconfig
+      '@repo/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       vue-tsc:
         specifier: ^3.3.14
         version: 3.3.14(typescript@6.0.3)
 
   packages/tsconfig: {}
+
+  packages/types: {}
 
 packages:
 
