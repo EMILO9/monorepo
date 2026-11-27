@@ -13,13 +13,6 @@ This pnpm monorepo is managed with Turborepo. It contains:
 - pnpm `12.23.0`
 - MongoDB Atlas or a local MongoDB instance
 
-Activate the required pnpm version with Corepack:
-
-```bash
-corepack enable
-corepack prepare pnpm@12.23.0 --activate
-```
-
 ## Setup
 
 Run these commands from the repository root:
@@ -72,4 +65,16 @@ pnpm format:check
 pnpm build
 ```
 
-See [CHEATSHEET.md](CHEATSHEET.md) for quick commands and package installation examples.
+## Install packages
+
+Run from the repository root:
+
+```bash
+pnpm add -D -w <package>            # Shared development dependency
+pnpm --filter api add <package>     # API dependency
+pnpm --filter api add -D <package>  # API development dependency
+pnpm --filter adm add <package>     # Admin dependency
+pnpm --filter adm add -D <package>  # Admin development dependency
+pnpm --filter web add <package>     # Web dependency
+pnpm --filter web add -D <package>  # Web development dependency
+```
