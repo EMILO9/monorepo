@@ -188,6 +188,9 @@ importers:
       node:
         specifier: runtime:^26.13.1
         version: runtime:26.13.1
+      prettier:
+        specifier: ^3.10.1
+        version: 3.10.1
       turbo:
         specifier: ^2.11.13
         version: 2.11.13
@@ -2791,6 +2794,11 @@ packages:
   powershell-utils@0.2.1:
     resolution: {integrity: sha512-C+y9x90UElAddDZmV4qOx9W53B61PO7cIqWz2dQsWlwswuq4mr8NEwytdGKboYbQlGZ3awrkTeNvcZiZNHnQ8A==}
     engines: {node: '>=20'}
+
+  prettier@3.10.1:
+    resolution: {integrity: sha512-70vp3ZUYoPlFbF9uiTdXHUUCGEIp7d4+6p+8DYbkm2jP7x/3i/paXVF6dopSI3zd/CEitrZN1rc4i85xWmmXlg==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   pretty-bytes@7.2.0:
     resolution: {integrity: sha512-T2kroepGB5DRVbkN/nOpW03+VRWqdtJhZNuCW3wYk3chdPjgi4GcTBOaxWfHq1MIM0ypidxsSWbQaAiRpxnXmg==}
@@ -6250,6 +6258,8 @@ snapshots:
       source-map-js: 1.2.4
 
   powershell-utils@0.2.1: {}
+
+  prettier@3.10.1: {}
 
   pretty-bytes@7.2.0: {}
 

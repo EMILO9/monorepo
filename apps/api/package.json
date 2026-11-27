@@ -1,20 +1,22 @@
 {
-  "name": "api",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "tsdown src/main.ts",
-    "dev": "tsx watch src/main.ts",
-    "typecheck": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "@repo/tsconfig": "workspace:*",
-    "@types/node": "^26.6.10",
-    "tsdown": "^0.23.7",
-    "tsx": "^4.23.15"
-  },
-  "dependencies": {
-    "fastify": "^5.12.8",
-    "mongoose": "^9.13.1"
-  }
+    "name": "api",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "tsdown src/main.ts",
+        "dev": "tsx watch src/main.ts",
+        "typecheck": "tsc --noEmit",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "devDependencies": {
+        "@repo/tsconfig": "workspace:*",
+        "@types/node": "^26.6.10",
+        "tsdown": "^0.23.7",
+        "tsx": "^4.23.15"
+    },
+    "dependencies": {
+        "fastify": "^5.12.8",
+        "mongoose": "^9.13.1"
+    }
 }

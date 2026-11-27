@@ -1,19 +1,21 @@
 {
-  "name": "web",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "typecheck": "nuxt typecheck",
-    "preview": "nuxt preview",
-    "prepare": "nuxt prepare"
-  },
-  "dependencies": {
-    "nuxt": "^4.7.0"
-  },
-  "devDependencies": {
-    "@repo/tsconfig": "workspace:*",
-    "vue-tsc": "^3.3.14"
-  }
+    "name": "web",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "typecheck": "nuxt typecheck",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "preview": "nuxt preview",
+        "prepare": "nuxt prepare"
+    },
+    "dependencies": {
+        "nuxt": "^4.7.0"
+    },
+    "devDependencies": {
+        "@repo/tsconfig": "workspace:*",
+        "vue-tsc": "^3.3.14"
+    }
 }
