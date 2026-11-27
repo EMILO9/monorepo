@@ -1,80 +1,108 @@
+<div align="center">
+
 # Monorepo
 
-This pnpm monorepo is managed with Turborepo. It contains:
+**A TypeScript workspace for the API, web app, and admin app.**
 
-- `apps/api` — Fastify API with MongoDB/Mongoose
-- `apps/adm` — Vue 3 administration app with Vite
-- `apps/web` — Nuxt 4 web app
-- `packages/*` — shared workspace packages
+Built with pnpm workspaces and Turborepo.
 
-## Requirements
+</div>
+
+## What's inside
+
+| Workspace | Stack | Purpose |
+| --- | --- | --- |
+| `apps/api` | Fastify · Mongoose · Zod | HTTP API, environment validation, MongoDB connection |
+| `apps/web` | Nuxt 4 · Vue | Web application; currently checks API health at `/health` |
+| `apps/adm` | Vue 3 · Vite | Admin application; currently checks API health at `/health` |
+| `packages/tsconfig` | TypeScript | Shared TypeScript configurations |
+
+The API registers routes from `apps/api/src/routes`. Its current `GET /health` route returns `{ "status": "ok" }`. Both frontends call this endpoint during startup.
+
+## Prerequisites
 
 - Node.js `^26.13.1`
 - pnpm `12.23.0`
-- MongoDB Atlas or a local MongoDB instance
+- A reachable MongoDB instance (Atlas or local)
 
-## Setup
+Install Node.js and pnpm using your preferred method before continuing.
 
-Run these commands from the repository root:
+## Get started
+
+From the repository root, install dependencies and create the API environment file:
 
 ```bash
 pnpm install
 cp apps/api/.env.example apps/api/.env
-pnpm --filter web exec nuxt prepare
 ```
 
-Edit `apps/api/.env` and replace the example credentials:
+On Windows PowerShell, copy the file with:
+
+```powershell
+Copy-Item apps/api/.env.example apps/api/.env
+```
+
+Open `apps/api/.env` and replace the example MongoDB connection details with your own:
 
 ```dotenv
 NODE_ENV=development
 PORT=8080
 CORS_ORIGINS=http://localhost:3000,http://localhost:5173
-MONGO_HOST=mongodb+srv://cluster0.example.mongodb.net
-MONGO_USER=database-user
-MONGO_PASS=database-password
+MONGO_HOST=mongodb+srv://your-cluster.example.mongodb.net
+MONGO_USER=your-database-user
+MONGO_PASS=your-database-password
 MONGO_DB=testing
 ```
 
-`MONGO_DB` is optional. If omitted, Mongoose uses the database specified in `MONGO_HOST`, or MongoDB's default `test` database when the URI has no database name.
+`MONGO_HOST`, `MONGO_USER`, and `MONGO_PASS` are required. `MONGO_DB` is optional: if omitted, Mongoose uses the database named in the URI, or `test` if the URI has no database name. `PORT` defaults to `8080`; `CORS_ORIGINS` is a comma-separated list and defaults to empty.
 
-Never commit `apps/api/.env` or real database credentials.
+Keep real credentials in `apps/api/.env`; never commit them. The repository ignores `.env` files and provides `.env.example` as a template.
 
-## Run
+## Start developing
 
-Run every app:
+Start all three apps together from the root:
 
 ```bash
 pnpm dev
 ```
 
-Run only one app:
+Or start a single app:
 
 ```bash
 pnpm --filter api dev
-pnpm --filter adm dev
 pnpm --filter web dev
+pnpm --filter adm dev
 ```
 
-The API normally listens on `http://localhost:8080`.
+The API listens on port `8080` by default. The web and admin dev servers print their local URLs in the terminal. The frontends currently request `http://localhost:8080/health`, so start the API as well when running either frontend.
 
-## Checks and builds
+## Useful commands
+
+Run from the root of the repository:
+
+| Command | What it does |
+| --- | --- |
+| `pnpm dev` | Start all apps in development mode |
+| `pnpm build` | Build all apps and packages |
+| `pnpm typecheck` | Type-check all workspaces |
+| `pnpm format` | Format files in all workspaces |
+| `pnpm format:check` | Check formatting without changing files |
+| `pnpm --filter <workspace> <script>` | Run a script in one workspace, e.g. `pnpm --filter api typecheck` |
+
+After a fresh install, or after changing Nuxt configuration/modules, regenerate Nuxt's generated types/configuration:
 
 ```bash
-pnpm typecheck
-pnpm format:check
-pnpm build
+pnpm --filter web exec nuxt prepare
 ```
 
-## Install packages
+## Add a dependency
 
-Run from the repository root:
+Run from the repository root and target the workspace that uses the package:
 
 ```bash
-pnpm add -D -w <package>            # Shared development dependency
-pnpm --filter api add <package>     # API dependency
-pnpm --filter api add -D <package>  # API development dependency
-pnpm --filter adm add <package>     # Admin dependency
-pnpm --filter adm add -D <package>  # Admin development dependency
-pnpm --filter web add <package>     # Web dependency
-pnpm --filter web add -D <package>  # Web development dependency
+pnpm --filter api add <package>
+pnpm --filter web add <package>
+pnpm --filter adm add <package>
 ```
+
+Add a development-only dependency by adding `-D`, for example `pnpm --filter api add -D <package>`. Use `pnpm add -D -w <package>` for tooling shared at the repository root.
