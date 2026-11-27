@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@repo/tsconfig/app",
-  "compilerOptions": {},
+  "compilerOptions": { "types": ["vite/client"] },
   "include": ["."],
   "exclude": ["vite.config.ts"],
 }

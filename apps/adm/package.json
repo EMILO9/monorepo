@@ -1,18 +1,21 @@
 {
-    "name": "adm",
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "build": "tsdown src/main.ts",
-        "dev": "tsx watch src/main.ts",
-        "typecheck": "tsc --noEmit"
-    },
-    "devDependencies": {
-        "@repo/tsconfig": "workspace:*",
-        "@types/node": "^26.6.10",
-        "vite": "^8.3.8"
-    },
-    "dependencies": {
-        "vue": "^3.5.46"
-    }
+  "name": "adm",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "typecheck": "vue-tsc",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "@types/node": "^26.6.10",
+    "@vitejs/plugin-vue": "^6.0.11",
+    "vite": "^8.3.8",
+    "vue-tsc": "^3.3.14"
+  },
+  "dependencies": {
+    "vue": "^3.5.46"
+  }
 }

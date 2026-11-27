@@ -12,6 +12,9 @@
     "isolatedModules": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "allowArbitraryExtensions": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true
   }
 }
