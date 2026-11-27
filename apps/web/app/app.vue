@@ -1,11 +1,14 @@
 <template>
-    <div>
-        <h1>Welcome to the homepage</h1>
-        <p>{{ a }}</p>
-    </div>
+    <p>Health Check: {{ health }}</p>
 </template>
 
 <script setup lang="ts">
-    import { ref } from "vue";
-    const a = ref(1337);
+    import { onMounted, ref } from "vue";
+    const health = ref("waiting");
+    onMounted(async () => {
+        const response = await fetch("http://localhost:8080/health");
+        const data = await response.json();
+        await new Promise((resolve) => setTimeout(resolve, 4000));
+        health.value = data.status;
+    });
 </script>
