@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
     import { onMounted, ref } from "vue";
-    import type { HealthResponse } from "@repo/types/health";
+    import type { HealthResponse } from "@repo/types";
     const health = ref("waiting");
     onMounted(async () => {
         const response = await fetch("http://localhost:8080/health");

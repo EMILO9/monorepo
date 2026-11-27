@@ -9,7 +9,6 @@ import mongoose from "mongoose";
 import * as z from "zod";
 import { fromZodError } from "zod-validation-error";
 
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 

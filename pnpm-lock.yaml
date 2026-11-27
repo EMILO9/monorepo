@@ -285,7 +285,11 @@ importers:
         specifier: ^26.6.10
         version: 26.6.10
 
-  packages/types: {}
+  packages/types:
+    devDependencies:
+      '@repo/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
 
 packages:
 

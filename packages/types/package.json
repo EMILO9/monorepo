@@ -2,6 +2,14 @@
     "name": "@repo/types",
     "private": true,
     "exports": {
-        "./*": "./*.ts"
+        ".": "./index.ts"
+    },
+    "scripts": {
+        "typecheck": "tsc --noEmit",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "devDependencies": {
+        "@repo/tsconfig": "workspace:*"
     }
 }
