@@ -5,8 +5,6 @@ Run the commands below from the repository root unless stated otherwise.
 ## Setup
 
 ```bash
-corepack enable
-corepack prepare pnpm@12.23.0 --activate
 pnpm install
 cp apps/api/.env.example apps/api/.env
 pnpm --filter web exec nuxt prepare
